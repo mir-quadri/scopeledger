@@ -8,8 +8,13 @@ Measured October 14, 2026. The project is a prototype with owner-reviewed decisi
 - DOM workflow checks passed with jsdom: sample load, effort and selection, $500 illustrative export, classification overrides, decimal rates, invalid-rate export blocking, source-change invalidation, local-only inference guidance and literal rendering of markup-like source text.
 - JavaScript syntax check passed.
 - Unit/HTTP tests use a fake model transport. They verify application behavior, not the model's understanding.
-- GitHub Actions workflow is provided but has not been run on GitHub; no Copilot category is claimed.
-- Full visual browser QA was unavailable under the supported preview tooling. DOM checks do not establish visual quality or replace a real-device review.
+- GitHub Actions passed on source commit `415a225` and documentation commit `dd0f007`: [verified run](https://github.com/mir-quadri/scopeledger/actions/runs/38650362284). GitHub Actions use alone is not claimed as Copilot use.
+- The public desktop browser workflow passed: repeated sample load, estimates, $500 export, owner override, source-change invalidation and source ZIP download. The website integration also passed lint, typecheck, tests, build and Codex review in [PR #196](https://github.com/mir-quadri/mirquadri-com/pull/196). This does not establish mobile usability or replace target-device review.
+
+## Reflection fixes — October 14, 2026
+
+- Found a browser/backend pricing mismatch: 0.5 hours at $1.13 displayed $0.56 in the sample but the backend correctly computed $0.57. Browser calculations now multiply integer cents by integer quarter-hours and round half-cents up. Regression cases cover display and sample export.
+- Synchronized reduced-motion handling between the downloaded app and hosted demo. Model prompts and evaluation outputs are unchanged; no higher semantic accuracy is claimed.
 
 ## Real Gemma evaluation
 

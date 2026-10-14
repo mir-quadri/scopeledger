@@ -1,12 +1,10 @@
 ---
 title: "I built ScopeLedger to turn ‘one more thing’ into a clear scope conversation"
-published: false
+published: true
 tags: devchallenge, hf26challenge, gemma, opensource
 ---
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle](https://dev.to/challenges/hacktoberfest-week2-2026-10-12).*
-
-> PUBLICATION CHECK: Public project and guided-demo links are verified. Review the final article and measured model results in VALIDATION.md before publishing. This draft has not been submitted to DEV.
 
 ## What I Built
 
@@ -26,6 +24,17 @@ The guided sample uses a five-page website, two revision rounds, excluded appoin
 
 Three hours for booking plus two for Spanish at an owner-entered $100/hour creates an illustrative $500 quote. That is arithmetic, not a claim of recovered revenue. The guided sample is hand-authored and labeled separately from live AI.
 
+### Try live AI locally
+
+The web walkthrough uses fixed sample decisions. To evaluate your own documents, install Python 3.10+ and Ollama, clone the repository, then run these commands from its folder:
+
+```sh
+ollama pull gemma3:4b
+python3 server.py
+```
+
+Open http://127.0.0.1:8765 and select **Review with local Gemma**. Inspect every source and decision before exporting. Allow several GB of working memory and time for CPU inference.
+
 ## Code
 
 [ScopeLedger source code](https://github.com/mir-quadri/scopeledger)
@@ -41,6 +50,16 @@ Gemma handles the part that simple matching cannot: deciding whether a new ask i
 I use structured JSON output. The validator rejects unknown source IDs, duplicate requests, missing requests and unexpected fields. Quotes are reconstructed from the source text rather than copied from model-generated quotations. Prices come only from the owner’s rate and quarter-hour estimates, calculated with decimal arithmetic.
 
 There is an important boundary: a valid citation does not mean a correct interpretation. The owner can change every proposed classification, and the backend refuses to export an unreviewed change or a change without a positive estimate.
+
+### What the model actually got right
+
+| Model and prompt | Development cases matched |
+| --- | ---: |
+| Gemma 3 1B, initial | 1 of 8 |
+| Gemma 3 4B, initial | 4 of 8 |
+| Gemma 3 4B, revised | 6 of 8 |
+
+These are the same eight synthetic cases reused during prompt refinement—not a held-out accuracy benchmark. [Read the case-by-case validation](https://github.com/mir-quadri/scopeledger/blob/main/docs/VALIDATION.md) and [inspect the raw revised-model outputs](https://github.com/mir-quadri/scopeledger/blob/main/evals/results-gemma3-4b-v2.json).
 
 The first real model evaluation changed the design decision. Gemma 3 1B passed only 1 of my 8 development cases. It treated some explicitly excluded work as included. I retained those results and tested a larger model rather than presenting the sample walkthrough as proof that the AI worked. The revised 4B prompt matched 6 of the 8 development cases. It still mishandled an included revision and a request mixing included and excluded work. I retained both failures and made owner review central to the workflow. The 23 application/HTTP checks and the DOM workflow check passed separately. A real local-model API-to-export run also passed, using explicit owner decisions to produce a $500 sample draft.
 
@@ -58,7 +77,11 @@ This does not mean inference has no cost. A laptop still needs memory, processin
 
 ## My Agent Session
 
-I used OpenAI coding assistance to design and implement this new project. `docs/BUILD_LOG.md` records the major decisions. DevRelay’s official installer returned HTTP 403 in this environment, so I have not claimed a DevRelay session or sticker. No private emails or client documents are included in the project.
+I used OpenAI coding assistance to design and implement this new project. The repository’s `docs/BUILD_LOG.md` records the major decisions. DevRelay’s official installer returned HTTP 403 in the build environment, so I have not claimed a DevRelay session or sticker. No private emails or client documents are included in the project.
+
+### What still needs real users
+
+The largest product gap is customer evidence. No freelancer has yet validated the price, recovered revenue or time saved. My next step is to test sanitized scope disagreements with freelance developers and record whether they can spot model errors, complete a draft and see enough value to pay.
 
 ## Prize Categories
 
@@ -66,4 +89,4 @@ I used OpenAI coding assistance to design and implement this new project. `docs/
 
 ---
 
-Built by Mir Quadri / Orchestrate AI. Started October 14, 2026. AI-assisted development and writing; reviewed by the author before publication.
+Built by Mir Quadri / Orchestrate AI. Started October 14, 2026. AI-assisted development and writing.

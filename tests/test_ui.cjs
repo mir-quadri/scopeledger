@@ -16,6 +16,11 @@ const root=path.resolve(__dirname,'..');
  const select=cards[0].querySelector('select');select.value='clarify';select.dispatchEvent(new w.Event('input'));assert.equal($('total').textContent,'$200.00');assert(!cards[0].querySelector('input[type=checkbox]').checked);
  // Fractional dollar rate avoids binary floating point rejection.
  $('rate').value='1.13';$('rate').dispatchEvent(new w.Event('input'));assert.equal($('total').textContent,'$2.26');
+ // Half-cent estimates match backend ROUND_HALF_UP in both display and exported sample.
+ for(const [rate,hours,expected] of [['1.13','0.5','$0.57'],['1.02','1.25','$1.28'],['1.14','0.25','$0.29']]){
+  $('rate').value=rate;const effort=cards[2].querySelector('input[type=number]');effort.value=hours;effort.dispatchEvent(new w.Event('input'));
+  assert.equal($('total').textContent,expected);$('export').click();await tick();assert(blobText.includes('Total proposed: '+expected));
+ }
  // Invalid inputs block export.
  $('rate').value='0';$('rate').dispatchEvent(new w.Event('input'));assert($('export').disabled);
  $('scope').value+=' changed';$('scope').dispatchEvent(new w.Event('input'));assert($('results').hidden);

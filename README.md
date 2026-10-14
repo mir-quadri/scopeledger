@@ -3,6 +3,8 @@
 
 Public repository: https://github.com/mir-quadri/scopeledger
 
+Published DEV submission: https://dev.to/mirquadri/i-built-scopeledger-to-turn-one-more-thing-into-a-clear-scope-conversation-54e0
+
 Public project page: https://mirquadri.com/ai-lab/demos/scopeledger
 
 Public guided demo: https://mirquadri.com/demos/scopeledger/index.html (hand-authored sample, not live AI inference).
@@ -71,7 +73,7 @@ Unit/HTTP tests use a fake model transport and prove application behavior, not m
 - `tests/`: domain, HTTP and DOM checks.
 - `evals/`: eight labeled semantic cases and real-inference runner.
 - `docs/PRODUCT_AND_ARCHITECTURE.md`: product scope, design, architecture and next milestones.
-- `docs/SUBMISSION.md`: DEV submission draft; resolve explicit remaining items before publication.
+- `docs/SUBMISSION.md`: source copy of the published DEV submission.
 - `docs/DEMO_SCRIPT.md`: concise demonstration recording guide.
 
 ## Limits and next steps
