@@ -1,0 +1,13 @@
+{
+ "scope": "Build a five-page marketing website with a contact form.\nInclude two rounds of visual revisions.\nOnline payment collection and appointment booking are excluded.\nProvide an English-only launch.",
+ "requests": "Please add online appointment booking.\nPlease adjust the homepage colors as our first revision.\nCan the site support Spanish too?\nCan you make it more premium?",
+ "analysis": {
+  "mode": "sample", "model": "Hand-authored walkthrough · not model output", "seconds": 0,
+  "items": [
+   {"request_id":"R1","status":"change","scope_ids":["S3"],"reason":"Appointment booking is explicitly excluded from the agreed deliverables."},
+   {"request_id":"R2","status":"included","scope_ids":["S2"],"reason":"The first color revision fits within the two included visual revision rounds."},
+   {"request_id":"R3","status":"change","scope_ids":["S4"],"reason":"Spanish support expands the English-only launch."},
+   {"request_id":"R4","status":"clarify","scope_ids":["S1","S2"],"reason":"Ask which specific visual changes are intended before deciding whether a revision covers them."}
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+  "model": "gemma3:4b",
+  "mode": "live",
+  "analysis": {
+    "items": [
+      {
+        "request_id": "R1",
+        "status": "change",
+        "scope_ids": [
+          "S3"
+        ],
+        "reason": "Adding online appointment booking is explicitly excluded in the agreed scope.",
+        "request_quote": "Please add online appointment booking.",
+        "scope_quotes": [
+          {
+            "id": "S3",
+            "text": "Online payment collection and appointment booking are excluded."
+          }
+        ]
+      },
+      {
+        "request_id": "R2",
+        "status": "clarify",
+        "scope_ids": [
+          "S2"
+        ],
+        "reason": "Adjusting homepage colors is a visual revision and requires clarification on the specific changes desired.",
+        "request_quote": "Please adjust the homepage colors as our first revision.",
+        "scope_quotes": [
+          {
+            "id": "S2",
+            "text": "Include two rounds of visual revisions."
+          }
+        ]
+      },
+      {
+        "request_id": "R3",
+        "status": "clarify",
+        "scope_ids": [],
+        "reason": "Supporting Spanish language requires clarification on the scope of localization work.",
+        "request_quote": "Can the site support Spanish too?",
+        "scope_quotes": []
+      },
+      {
+        "request_id": "R4",
+        "status": "clarify",
+        "scope_ids": [],
+        "reason": "Making the site 'more premium' is vague and requires clarification on the intended changes.",
+        "request_quote": "Can you make it more premium?",
+        "scope_quotes": []
+      }
+    ],
+    "scope": {
+      "S1": "Build a five-page marketing website with a contact form.",
+      "S2": "Include two rounds of visual revisions.",
+      "S3": "Online payment collection and appointment booking are excluded.",
+      "S4": "Provide an English-only launch."
+    },
+    "requests": {
+      "R1": "Please add online appointment booking.",
+      "R2": "Please adjust the homepage colors as our first revision.",
+      "R3": "Can the site support Spanish too?",
+      "R4": "Can you make it more premium?"
+    },
+    "source_hash": "c4473f8a4dbfbd0a14bd87299aab4100d93e09b631741af8ee5baf9e2340211a",
+    "model": "gemma3:4b",
+    "mode": "live",
+    "prompt_version": 2,
+    "seconds": 21.51,
+    "output_tokens": 172,
+    "review": null,
+    "id": "deb91ac9a46f4e78902a95fdbe51dadf"
+  },
+  "owner_review": {
+    "rate": "100",
+    "rows": [
+      {
+        "request_id": "R1",
+        "status": "change",
+        "scope_ids": [
+          "S3"
+        ],
+        "reason": "Adding online appointment booking is explicitly excluded in the agreed scope.",
+        "request_quote": "Please add online appointment booking.",
+        "scope_quotes": [
+          {
+            "id": "S3",
+            "text": "Online payment collection and appointment booking are excluded."
+          }
+        ],
+        "owner_status": "change",
+        "approved": true,
+        "hours": "3",
+        "amount_cents": 30000
+      },
+      {
+        "request_id": "R2",
+        "status": "clarify",
+        "scope_ids": [
+          "S2"
+        ],
+        "reason": "Adjusting homepage colors is a visual revision and requires clarification on the specific changes desired.",
+        "request_quote": "Please adjust the homepage colors as our first revision.",
+        "scope_quotes": [
+          {
+            "id": "S2",
+            "text": "Include two rounds of visual revisions."
+          }
+        ],
+        "owner_status": "included",
+        "approved": false,
+        "hours": "0",
+        "amount_cents": 0
+      },
+      {
+        "request_id": "R3",
+        "status": "clarify",
+        "scope_ids": [],
+        "reason": "Supporting Spanish language requires clarification on the scope of localization work.",
+        "request_quote": "Can the site support Spanish too?",
+        "scope_quotes": [],
+        "owner_status": "change",
+        "approved": true,
+        "hours": "2",
+        "amount_cents": 20000
+      },
+      {
+        "request_id": "R4",
+        "status": "clarify",
+        "scope_ids": [],
+        "reason": "Making the site 'more premium' is vague and requires clarification on the intended changes.",
+        "request_quote": "Can you make it more premium?",
+        "scope_quotes": [],
+        "owner_status": "clarify",
+        "approved": false,
+        "hours": "0",
+        "amount_cents": 0
+      }
+    ],
+    "total_cents": 50000,
+    "approved_count": 2,
+    "currency": "USD"
+  },
+  "markdown": "# Change order \u2014 owner-reviewed draft\n\nClient acceptance is pending. No work has been authorized or message sent.\n\nSource fingerprint: c4473f8a4dbfbd0a14bd87299aab4100d93e09b631741af8ee5baf9e2340211a\nRate: USD 100/hour\n\n## R1\nPlease add online appointment booking.\n\nOwner estimate: 3 hours | USD 300.00\nOwner marked this request as additional work.\n\n## R3\nCan the site support Spanish too?\n\nOwner estimate: 2 hours | USD 200.00\nOwner marked this request as additional work.\n\n**Total proposed: USD 500.00**\n\nTiming, taxes, payment terms and start date: confirm with client.\n\nPlease confirm the additional scope and price before work begins.",
+  "deleted": true
+}

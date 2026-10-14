@@ -1,0 +1,1 @@
+{"name":"scopeledger","version":"0.1.0","private":true,"description":"Optional DOM verification for ScopeLedger","scripts":{"test":"node tests/test_ui.cjs"},"devDependencies":{"jsdom":"26.1.0"},"engines":{"node":">=20"}}

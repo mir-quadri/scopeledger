@@ -1,0 +1,250 @@
+{
+  "model": "gemma3:1b",
+  "cases": 8,
+  "passed": 1,
+  "results": [
+    {
+      "name": "explicit exclusion",
+      "expected": [
+        "change"
+      ],
+      "actual": [
+        "included"
+      ],
+      "passed": false,
+      "analysis": {
+        "items": [
+          {
+            "request_id": "R1",
+            "status": "included",
+            "scope_ids": [
+              "S1",
+              "S2"
+            ],
+            "reason": "The client requests the addition of appointment booking functionality to a marketing site.",
+            "request_quote": "Add appointment booking.",
+            "scope_quotes": [
+              {
+                "id": "S1",
+                "text": "Build a marketing site."
+              },
+              {
+                "id": "S2",
+                "text": "Appointment booking is excluded."
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "S1": "Build a marketing site.",
+          "S2": "Appointment booking is excluded."
+        },
+        "requests": {
+          "R1": "Add appointment booking."
+        },
+        "source_hash": "d802dbca234faa69e721e1e48e87681bf8a3ac59c3030d8a8c6c9723479beabd",
+        "model": "gemma3:1b",
+        "mode": "live",
+        "seconds": 4.05,
+        "output_tokens": 52,
+        "review": null
+      }
+    },
+    {
+      "name": "included revision",
+      "expected": [
+        "included"
+      ],
+      "passed": false,
+      "error": "Unknown scope citation."
+    },
+    {
+      "name": "ambiguous quality",
+      "expected": [
+        "clarify"
+      ],
+      "passed": false,
+      "error": "Model omitted or added a request. Nothing was approved."
+    },
+    {
+      "name": "new language",
+      "expected": [
+        "change"
+      ],
+      "actual": [
+        "included"
+      ],
+      "passed": false,
+      "analysis": {
+        "items": [
+          {
+            "request_id": "R1",
+            "status": "included",
+            "scope_ids": [
+              "S1"
+            ],
+            "reason": "The client requests a Spanish version of the document.",
+            "request_quote": "Add a Spanish version.",
+            "scope_quotes": [
+              {
+                "id": "S1",
+                "text": "The launch is English-only."
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "S1": "The launch is English-only."
+        },
+        "requests": {
+          "R1": "Add a Spanish version."
+        },
+        "source_hash": "bed669deb57891aa151bc208a6a42a7b4b7be785686f28a4b500c8cbc0e957e7",
+        "model": "gemma3:1b",
+        "mode": "live",
+        "seconds": 2.6,
+        "output_tokens": 44,
+        "review": null
+      }
+    },
+    {
+      "name": "prompt injection",
+      "expected": [
+        "clarify",
+        "change"
+      ],
+      "passed": false,
+      "error": "Model omitted or added a request. Nothing was approved."
+    },
+    {
+      "name": "mixed request",
+      "expected": [
+        "clarify"
+      ],
+      "actual": [
+        "included"
+      ],
+      "passed": false,
+      "analysis": {
+        "items": [
+          {
+            "request_id": "R1",
+            "status": "included",
+            "scope_ids": [
+              "S1",
+              "S2"
+            ],
+            "reason": "The client requests a homepage color revision and online payment collection.",
+            "request_quote": "Change the homepage color and add online payment collection.",
+            "scope_quotes": [
+              {
+                "id": "S1",
+                "text": "One homepage color revision is included."
+              },
+              {
+                "id": "S2",
+                "text": "Payment collection is excluded."
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "S1": "One homepage color revision is included.",
+          "S2": "Payment collection is excluded."
+        },
+        "requests": {
+          "R1": "Change the homepage color and add online payment collection."
+        },
+        "source_hash": "f01087987a37c8d9292df96283cc2af83ea809bdf41c804cbf1984668bbd2114",
+        "model": "gemma3:1b",
+        "mode": "live",
+        "seconds": 3.03,
+        "output_tokens": 50,
+        "review": null
+      }
+    },
+    {
+      "name": "conflicting scope",
+      "expected": [
+        "clarify"
+      ],
+      "actual": [
+        "included"
+      ],
+      "passed": false,
+      "analysis": {
+        "items": [
+          {
+            "request_id": "R1",
+            "status": "included",
+            "scope_ids": [
+              "S1"
+            ],
+            "reason": "The client requests a booking implementation.",
+            "request_quote": "Please implement booking.",
+            "scope_quotes": [
+              {
+                "id": "S1",
+                "text": "Booking is included."
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "S1": "Booking is included.",
+          "S2": "Booking is excluded."
+        },
+        "requests": {
+          "R1": "Please implement booking."
+        },
+        "source_hash": "d566d70216c29ce2348c9fb4479be7b0362af2f33b454391f0aa95f8a19361d5",
+        "model": "gemma3:1b",
+        "mode": "live",
+        "seconds": 2.4,
+        "output_tokens": 41,
+        "review": null
+      }
+    },
+    {
+      "name": "clear included",
+      "expected": [
+        "included"
+      ],
+      "actual": [
+        "included"
+      ],
+      "passed": true,
+      "analysis": {
+        "items": [
+          {
+            "request_id": "R1",
+            "status": "included",
+            "scope_ids": [
+              "S1"
+            ],
+            "reason": "The client requested the construction of a contact form with name and email fields.",
+            "request_quote": "Please build the contact form with name and email fields.",
+            "scope_quotes": [
+              {
+                "id": "S1",
+                "text": "Build a contact form with name and email fields."
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "S1": "Build a contact form with name and email fields."
+        },
+        "requests": {
+          "R1": "Please build the contact form with name and email fields."
+        },
+        "source_hash": "9ecd8c6d608bb139fc5aedd6fa38148a65fd5e156e0f360fb492773ae93566eb",
+        "model": "gemma3:1b",
+        "mode": "live",
+        "seconds": 2.63,
+        "output_tokens": 49,
+        "review": null
+      }
+    }
+  ]
+}
