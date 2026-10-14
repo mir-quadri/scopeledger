@@ -6,7 +6,7 @@ tags: devchallenge, hf26challenge, gemma, opensource
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle](https://dev.to/challenges/hacktoberfest-week2-2026-10-12).*
 
-> PUBLICATION CHECK: Add a judge-accessible demo or video URL below. The current hosted preview is private. Review the measured model results in VALIDATION.md and confirm a local demo before publishing. This draft has not been submitted to DEV.
+> PUBLICATION CHECK: Public project and guided-demo links are verified. Review the final article and measured model results in VALIDATION.md before publishing. This draft has not been submitted to DEV.
 
 ## What I Built
 
@@ -20,7 +20,7 @@ My commercial hypothesis is a $19 one-time local tool, with an optional assisted
 
 ## Demo
 
-**Add the public demo or video URL here before publication.**
+[Project page](https://mirquadri.com/ai-lab/demos/scopeledger) · [Try the guided demo](https://mirquadri.com/demos/scopeledger/index.html)
 
 The guided sample uses a five-page website, two revision rounds, excluded appointment booking and an English-only launch. Booking and Spanish support illustrate potential changes. A first color revision illustrates included work. “Make it more premium” illustrates a request that needs clarification.
 

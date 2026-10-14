@@ -3,7 +3,9 @@
 
 Public repository: https://github.com/mir-quadri/scopeledger
 
-Owner-private guided preview: https://scopeledger.mirquadri.chatgpt.site (not yet a judge-accessible demo).
+Public project page: https://mirquadri.com/ai-lab/demos/scopeledger
+
+Public guided demo: https://mirquadri.com/demos/scopeledger/index.html (hand-authored sample, not live AI inference).
 
 A local-first scope review and change-order workspace for freelance developers and small agencies. Built from scratch by Mir Quadri, with AI coding assistance, starting October 14, 2026 for Hacktoberfest Week 2: Side Hustle. This is a new project, not a continuation of an existing app.
 
